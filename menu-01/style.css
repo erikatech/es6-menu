@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --color-primary: #5f55ac;
+  --color-primary-shade: #211d3d;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: url(bg.jpg) no-repeat center 20%;
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+}
+
+header h1 {
+  color: var(--color-primary);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  line-height: 64px;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.sp_menu {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.sp_menu #open {
+  color: var(--color-primary);
+  font-size: 32px;
+  line-height: 64px;
+  cursor: pointer;
+}
+
+.sp_menu #open.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(33, 29, 61, .9);
+  text-align: center;
+  padding: 64px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  color: #FFF;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay nav {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.overlay li {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 12px 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay a {
+  color: #FFF;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+  transition-delay: .3s;
+}
+
+.pc_menu {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .pc_menu {
+    display: block;
+    margin-left: auto;
+  }
+
+  .pc_menu ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pc_menu a {
+    display: block;
+    width: 80px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 64px;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+
+  .pc_menu a:hover {
+    opacity: .6;
+  }
+
+  .sp_menu {
+    display: none;
+  }
+}
